@@ -488,5 +488,5 @@ return(
   );
 ```
 
-Refer to attached Hello Word folder for more information.
+Refer to attached Hello Word folder for more information on the project.
 
