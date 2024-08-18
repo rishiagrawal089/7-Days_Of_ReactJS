@@ -17,7 +17,12 @@ Whenever the React Application is compiled it create a `Virtual DOM` in memory. 
 Virtual DOM help in managing the changes and `changes what needs to be changed`. Instead of changing the whole browser DOM evertime a change is made in the application.
 
 
-
+# Features of React ?
+- JSX : JSX help in writing the HTML in javascript file.
+- Virtual DOM : For easily detecting the changes and changing what need to be changed!
+- Component : Reusable UI piece which contain logic and data.
+- Extension Support : React Support alot of 3rd party library which can be used to perform many actions.
+- Performance : React application is much faster in comparision to normal JS application.
 
 
 
