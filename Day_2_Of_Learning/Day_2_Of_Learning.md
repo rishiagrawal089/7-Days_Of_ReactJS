@@ -76,7 +76,7 @@ class Car extends React.Component {
 
 # Rendering React Components
 
-Now your React application has a component called Car, which returns an <h2> element.
+Now your React application has a component called Car, which returns an `<h2>` element.
 
 To use this component in your application, use similar syntax as normal HTML: <Car />
 
@@ -87,7 +87,7 @@ root.render(<Car />);
 #### Let us see step-wise what is happening in the above example: 
 
 - We call the ReactDOM.render() as the first parameter.
-- React then calls the component Welcome, which returns <h2>Hi, I am a Car!</h2>; as the result.
+- React then calls the component Welcome, which returns `<h2>Hi, I am a Car!</h2>` as the result.
 - Then the ReactDOM efficiently updates the DOM to match with the returned element and renders that element to the DOM element with id as “root”.
 
 # Components in Components
