@@ -41,8 +41,8 @@ After installing run the given command in command prompt.
 ### Install VS Code 
 You need VS Code to have a proper text editor for writing and running the react code. You can also use code editor of your choose. Install it from [vs code](https://code.visualstudio.com/download) . 
 
-# Help
-The content is taking from different sources like W3School.com and GFG .So the credit goes to them also for the amazing content.
+# Help Taken
+The content is taken from different sources like [`W3School.com`](https://www.w3schools.com/react/default.asp) and [`GFG`](https://www.geeksforgeeks.org/react-tutorial/) .So the credit goes to them also for such an amazing content. The content rights are with `GFG` and `W3School`, I have just used it for learning purppose.
 
 
 
