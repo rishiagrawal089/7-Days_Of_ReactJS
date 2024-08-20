@@ -1,0 +1,20 @@
+1)Install Node_Modules
+--> npm install 
+
+2) Use React Router for routing 
+
+--> npm install react-router-dom --save
+
+3) Use Bootstrap for Responsive and Designing 
+
+--> npm install bootstrap --save 
+
+4) Use Bootstrap Icon 
+--> npm install react-bootstrap-icons --save
+
+5) Use Json File for Data Storage (Run the json server for data on port-8000 )
+
+
+---> npm install -g json-server
+
+--> json-server --watch db.json --port 8000

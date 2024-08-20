@@ -1,0 +1,100 @@
+{
+  "scholar": [
+    {
+      "name": "Rishi Agrawal",
+      "email": "rishi@gmail.com",
+      "phone": "6547899124",
+      "course": "BTech",
+      "branch": "Electronic and Communication",
+      "income": "300000",
+      "aadhaar": "222444111325",
+      "status": "Pending",
+      "paidamount": 0,
+      "id": 1
+    },
+    {
+      "name": "Raj Patel",
+      "email": "raj2@gmail.com",
+      "phone": "9898998983",
+      "course": "MTech",
+      "branch": "Information Technology",
+      "income": "333324",
+      "aadhaar": "222444111324",
+      "status": "Pending",
+      "paidamount": 0,
+      "id": 2
+    },
+    {
+      "name": "sajal kesharwani",
+      "email": "sajalkesh@gmail.com",
+      "phone": "9874563210",
+      "course": "MTech",
+      "branch": "Information Technology",
+      "income": "500000",
+      "aadhaar": "521463889502",
+      "status": "Pending",
+      "paidamount": 0,
+      "id": 3
+    },
+    {
+      "name": "rohit",
+      "email": "rohit02@gmail.com",
+      "phone": "1234567890",
+      "course": "BTech",
+      "branch": "Information Technology",
+      "income": "113546",
+      "aadhaar": "123456789123",
+      "status": "Pending",
+      "paidamount": 0,
+      "id": 4
+    },
+    {
+      "name": "aniket jain",
+      "email": "aniket@gmail.com",
+      "phone": "44455555554",
+      "course": "BTech",
+      "branch": "Information Technology",
+      "income": "400000",
+      "aadhaar": "12345678901236",
+      "status": "Success",
+      "paidamount": 103025.4,
+      "id": 5
+    },
+    {
+      "name": "Vashu",
+      "email": "vashu123@gmail.com",
+      "phone": "1478523697",
+      "course": "BTech",
+      "branch": "Computer Science",
+      "income": "500000",
+      "aadhaar": "123456987123",
+      "paidamount": 85000,
+      "status": "Success",
+      "id": 6
+    },
+    {
+      "name": "Manish Prajapati",
+      "email": "manish@gmail.com",
+      "phone": "9874521360",
+      "course": "BTech",
+      "branch": "Information Technology",
+      "income": "254120",
+      "aadhaar": "598123466789",
+      "status": "Pending",
+      "paidamount": 0,
+      "id": 7
+    },
+    {
+      "name": "Palak",
+      "email": "palak@gmail.com",
+      "phone": "5486658968",
+      "course": "MTech",
+      "branch": "Computer Science",
+      "income": "500566",
+      "aadhaar": "123456789546",
+      "status": "Success",
+      "paidamount": 85454.75,
+      "id": 8
+    }
+  ]
+}
