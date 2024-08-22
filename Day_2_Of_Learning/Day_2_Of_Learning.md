@@ -173,7 +173,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Garage />);
 ```
 
-#### Method as Props
+#### Method as Props (Lifting State Up)
+
+In terms of react js, the exchange of data from child component to parent component is called Lifting State Up.In this we usually pass the method from parent to child component which will be called in child component and the data is passed from this function to parent component, where the handle mechanism of this function is written.
 
 ```bash
 // App Component
