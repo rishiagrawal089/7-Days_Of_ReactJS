@@ -512,6 +512,7 @@ function Navmenu(props)
     );
 }
 ```
+#### ** Refer GFG article for more information on keys and how to have a unique key [Article Link](https://www.geeksforgeeks.org/reactjs-keys/?ref=lbp).
 ## Practice Code Section
 
 By now we have a good understanding of lifecycle of react component,its methods,styling react component,conditional rendering and list and keys. So let's create some small projects to get the better understanding of it.
