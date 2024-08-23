@@ -558,7 +558,8 @@ function App() {
 
 export default App;
 
-```# Practice Code Section
+```
+# Practice Code Section
 
 By now we have a good understanding of React Router,Router Types and its various hooks. So let's create some small projects to get the better understanding of it.
 
