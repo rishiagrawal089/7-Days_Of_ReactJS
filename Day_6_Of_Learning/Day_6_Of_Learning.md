@@ -300,14 +300,14 @@ const Courses = () => {
 };
 ```
 
-![Demo](https://media.geeksforgeeks.org/wp-content/uploads/20220213023212/ezgifcomgifmaker17.gif)
+![Nested Routing Demo](https://media.geeksforgeeks.org/wp-content/uploads/20220213023212/ezgifcomgifmaker17.gif)
 
 
 
 
 ## Hooks of Router
 
-There are many hooks provided by React Router DOM. But some of the most used hooks are :-
+There are many hooks provided by React Router DOM. But some of the most commonly used hooks are :-
 
 - useNavigate()
 - useParam()
@@ -318,8 +318,8 @@ There are many hooks provided by React Router DOM. But some of the most used hoo
 - useHistory()
 
 ### useNavigate() 
-- The useNavigate() hook is introduced in the React Router v6 to replace the useHistory() hook. In the earlier version, the useHistory() hook accesses the React Router history object and navigates to the other routers using the push or replace methods. It helps to go to the specific URL, forward or backward pages. 
-- In the updated version, the React Router’s new navigation API provides a useNavigate() hook which is an imperative version to perform the navigation actions with better compatibility
+- The useNavigate() hook is introduced in the React Router v6 to replace the useHistory() hook. In the earlier version, the useHistory() hook accesses the React Router history object and navigates to the other routes using the push or replace methods. It helps to go to the specific URL, forward or backward pages. 
+- In the updated version, the React Router’s new navigation API which provide a useNavigate() hook is used,mwhich is an imperative version to perform the navigation actions with better compatibility
 
 ```bash
 const Home = () => {
@@ -335,11 +335,11 @@ const Home = () => {
 ```
 
 ### useParams() Hook + Dynamic Routes
-Dynamic Routing and useParam() hook go hand in hand. Consider a scenario where we want to display a blog post with a unique slug. How do we make sure that we display the appropriate data and appropriate components, given that our blog post slug can be completely different?
+Dynamic Routing and useParam() hook go hand in hand. Consider a scenario where we want to display a blog post with a unique slug (`/:id in  URL is called as slug`). How do we make sure that we display the appropriate data and appropriate components, given that our blog post slug can be completely different?
 
-To declare a route parameter on a given route, it must be prefixed with a colon :. If I wanted to create a dynamic route,` "/blog/:postSlug" ` , for a blog post component
+To declare a route parameter on a given route, it must be prefixed with a colon`:`. Like if I wanted to create a dynamic route,` "/blog/:postSlug" ` , for a blog post component.
 
-Now we can access any route params of a declared route with its associated component using the useParams hook.Lets have a example to understand better.
+Now we can access any route params of a declared route with its associated component using the useParams() hook. Lets have a example to understand it better.
 
 ```bash
 
@@ -348,10 +348,10 @@ Now we can access any route params of a declared route with its associated compo
 export default function App() {
   return (
     <Router>
-      <Switch>
+      <Routes>
         <Route exact path="/" component={Home} />
         <Route path="/blog/:postSlug" component={BlogPost} />
-      </Switch>
+      </Routes>
     </Router>
   );
 }
@@ -374,7 +374,9 @@ function BlogPost() {
       .then((data) => setPost(data));
   }, [postSlug]);
 
-  if (!post) return null;
+  if (!post){
+     return null;
+  }
 
   return (
     <>
@@ -387,7 +389,7 @@ function BlogPost() {
 
 ### useSearchParam()
 - The useSearchParams hook is used to read and modify the query string in the URL for the current location. 
-- Like React's own useState hook, useSearchParams returns an array of two values: the current location's search params and a function that may be used to update them
+- Like React's own useState hook, useSearchParams returns an array of two values: the current location's search params and a function that may be used to update them.
 
 ```bash
 export default function SearchBar() {
@@ -408,7 +410,7 @@ export default function SearchBar() {
 - useRoutes() hook allows you to define routes in a declarative manner.
 - It is used to define and configure routes in a React application. 
 - It provides a flexible approach to defining routing configurations programmatically. 
-- It is a functional equivalent of <Routes>. You can define a route configuration JavaScript object that maps specific paths to React components.
+- It is a functional equivalent of `<Routes>` . We can define a route configuration JavaScript object that maps specific paths to React components and pass it to useRoutes() to create the <Routes> and nested <Route> structure in much same way as we create Routing in App.js .
 
 ```bash
 const routeConfig = [
@@ -439,13 +441,14 @@ export default function App() {
 }
 ```
 ### useLocation()
-The `useLocation` hook in React Router is used to return the current location of a React component. The `useLocation` returns the current location as an object and comes with props such as
+The `useLocation()` hook in React Router is used to return the current location of a React component. The `useLocation()` returns the current location as an object and comes with props such as :-
 
 - pathname
 - state
 - search
 - key
 - hash
+
 These props can be used with useEffect hook to perform side effects such as clicks onScroll or return state parsed to a Link component.
 
 #### NOTE :- ** Refer to this medium article for deeper knowledge on each one [useLocation() Hook](https://medium.com/@alexanie_/https-ocxigin-hashnode-dev-uselocation-hook-in-react-router-758a0a711308)
@@ -454,6 +457,9 @@ These props can be used with useEffect hook to perform side effects such as clic
 const location = useLocation();
     
 console.log(location.pathname); // '/about' from 'localhost:3000/about'
+
+// For state just pass it in Route as attribute like:-
+<Route to='/about' element='<About/> state={{id:1,name:'Rishi'}} />
 ```
 
 ### useMatchRoute()
@@ -470,7 +476,9 @@ function BlogPost() {
 ```
 
 ### useHistory()
-Its the old version of useNavigate and useLocation Hook. It use browser history API for the same purpose.
+Its the old version of useNavigate() and useLocation() Hook. It use browser history API for the same purpose. 
+
+#### NOTE :- ** Refer to this FreeCode article for deeper knowledge on [useHistory() Hook](https://www.freecodecamp.org/news/react-router-cheatsheet/)
 
 ```bash
 
@@ -478,6 +486,7 @@ const history= useHistory();
 
 console.log(history.location.pathname);
 history.push('/about');
+
 ```
 
 ## Sample Code of Routing
