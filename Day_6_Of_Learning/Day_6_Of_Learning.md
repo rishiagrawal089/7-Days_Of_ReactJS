@@ -302,7 +302,12 @@ const Courses = () => {
 
 ![Nested Routing Demo](https://media.geeksforgeeks.org/wp-content/uploads/20220213023212/ezgifcomgifmaker17.gif)
 
+## 9. Protected Route
+ Protected Routing is a concept in which we can pass other component as props (called as Higher Order Component[HOC]) and uses the useEffect hook for Mounting action to check the conditions.
 
+ 
+
+### **Refer to this medium article by Yogesh for more details. [Yogesh Manikkavasagam](https://medium.com/@yogeshmulecraft/implementing-protected-routes-in-react-js-b39583be0740) and if you are using Local Storage Concept for Protecting Routing, you can refer to this Youtube Video [Link](https://www.youtube.com/watch?v=iM9G0lgXsc4). 
 
 
 ## Hooks of Router
@@ -319,7 +324,7 @@ There are many hooks provided by React Router DOM. But some of the most commonly
 
 ### useNavigate() 
 - The useNavigate() hook is introduced in the React Router v6 to replace the useHistory() hook. In the earlier version, the useHistory() hook accesses the React Router history object and navigates to the other routes using the push or replace methods. It helps to go to the specific URL, forward or backward pages. 
-- In the updated version, the React Router’s new navigation API which provide a useNavigate() hook is used,mwhich is an imperative version to perform the navigation actions with better compatibility
+- In the updated version, the React Router’s new navigation API which provide a useNavigate() hook is used, which is an imperative version to perform the navigation actions with better compatibility
 
 ```bash
 const Home = () => {
