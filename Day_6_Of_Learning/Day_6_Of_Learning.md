@@ -312,9 +312,10 @@ In this way of Protected Routing we pass the component which is to be protected 
 - Create a Protected.js component accepting a props as parameter. Inside this first destructed the props to take out component and then call the useEffect hook to check whether the local storage contain the key or not. Based on which we redirected user to login component ,at last return the destructed Component.
 - At last pass the components which are to be protected like Product,Cart, etc as props from Protected.js in App.js like :-
        `<Route to="/home" element={<Protected component={<Component/>} } />`
+#### **Refer to this Youtube Video for Code and more Details[Link](https://www.youtube.com/watch?v=iM9G0lgXsc4). 
   
-  #### 2. Using useContext Hook :-
-  In this way we will define our logic in context provider and use it to check the condition across child components. It is most commonly used in token based web authentication application.The steps involved are :
+#### 2. Using useContext Hook :-
+In this way we will define our logic in context provider and use it to check the condition across child components. It is most commonly used in token based web authentication application.The steps involved are :
   - Let’s start by setting up our authentication context. This context will provide authentication-related data and methods to its children components.
 ```bash
 
@@ -392,8 +393,9 @@ const App = () => {
 };
 ```
 
-#### **Refer to this medium article by Yogesh for more details [Yogesh Manikkavasagam](https://medium.com/@yogeshmulecraft/implementing-protected-routes-in-react-js-b39583be0740) and if you are using Local Storage Concept for Protected Routing, you can refer to this Youtube Video [Link](https://www.youtube.com/watch?v=iM9G0lgXsc4). 
+#### **Refer to this medium article by Yogesh for more details [Yogesh Manikkavasagam](https://medium.com/@yogeshmulecraft/implementing-protected-routes-in-react-js-b39583be0740).
 
+![Working Demo](https://miro.medium.com/v2/resize:fit:828/format:webp/1*SvWNrfLD7XzR2i80Kdbn7g.gif)
 
 ## Hooks of Router
 
