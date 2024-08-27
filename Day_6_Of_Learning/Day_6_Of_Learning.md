@@ -302,12 +302,97 @@ const Courses = () => {
 
 ![Nested Routing Demo](https://media.geeksforgeeks.org/wp-content/uploads/20220213023212/ezgifcomgifmaker17.gif)
 
-## 9. Protected Route
- Protected Routing is a concept in which we can pass other component as props (called as Higher Order Component[HOC]) and uses the useEffect hook for Mounting action to check the conditions.
+## 10. Protected Route
+Protecting routes ensures that only authenticated users can access them,it is one of the most important and used concept in any web application for setting up Authorization and Authentication. Here we are going to discuss the 2 most common way of doing the same in React JS :-
 
- 
+#### 1. Using HOC(Higher Order Component) :-
+In this way of Protected Routing we pass the component which is to be protected as props (called as HOC) in other componet which contain protecting logic and uses the useEffect hook for checking the logic during the Mounting Phase,in order to check the necessary authentication conditions and processed further accordingly. The steps involved are :
 
-### **Refer to this medium article by Yogesh for more details. [Yogesh Manikkavasagam](https://medium.com/@yogeshmulecraft/implementing-protected-routes-in-react-js-b39583be0740) and if you are using Local Storage Concept for Protecting Routing, you can refer to this Youtube Video [Link](https://www.youtube.com/watch?v=iM9G0lgXsc4). 
+- Create a Login.js component containing the login form, on submit of this form store the token or any other login related data in location storage.
+- Create a Protected.js component accepting a props as parameter. Inside this first destructed the props to take out component and then call the useEffect hook to check whether the local storage contain the key or not. Based on which we redirected user to login component ,at last return the destructed Component.
+- At last pass the components which are to be protected like Product,Cart, etc as props from Protected.js in App.js like :-
+       `<Route to="/home" element={<Protected component={<Component/>} } />`
+  
+  #### 2. Using useContext Hook :-
+  In this way we will define our logic in context provider and use it to check the condition across child components. It is most commonly used in token based web authentication application.The steps involved are :
+  - Let’s start by setting up our authentication context. This context will provide authentication-related data and methods to its children components.
+```bash
+
+const AuthContext = createContext();
+
+// Context Provider for useContext
+export const AuthProvider = ({ children }) => {
+  const [token, setToken] = useState(null);
+  const login = (userToken) => {
+    setToken(userToken);
+  };
+  const logout = () => {
+    setToken(null);
+  };
+  const isAuthenticated = !!token;
+  return (
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+// useAuth custom Hook for the getting context.
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};
+```
+- Now, let’s create a component for handling protected routes. The PrivateRoutes component checks if the user is authenticated using the useAuth hook and either renders the protected content or redirects to the login page.
+```bash
+const PrivateRoutes = () => {
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+};
+export default PrivateRoutes;
+```
+- The Home component represents a protected route. It can only be accessed by authenticated users. Upon successful authentication, the user is redirected to this component.
+```bash
+const Home = () => {
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+  const handleSignOut = () => {
+    console.log("User signed out");
+    logout();
+    navigate("/login");
+  };
+  return (
+    <div>
+          ... Home Page data
+    </div>
+  )
+};
+```
+- Similarly Create a Component for Login and in handleLogin() called login() of useAuth Hook. 
+- Integrating Protected Routes in App finally, in our App.js, we integrate the protected routes within the Routes component.
+```bash
+const App = () => {
+  return (
+    <Router>
+      <AuthProvider>
+        {" "}
+        <Routes>
+          <Route element={<PrivateRoutes />}>
+            {" "}
+            <Route path="/home" element={<Home />} />
+          </Route>
+          <Route path="/login" element={<LoginForm />} />
+        </Routes>
+      </AuthProvider>
+    </Router>
+  );
+};
+```
+
+#### **Refer to this medium article by Yogesh for more details [Yogesh Manikkavasagam](https://medium.com/@yogeshmulecraft/implementing-protected-routes-in-react-js-b39583be0740) and if you are using Local Storage Concept for Protected Routing, you can refer to this Youtube Video [Link](https://www.youtube.com/watch?v=iM9G0lgXsc4). 
 
 
 ## Hooks of Router
